@@ -22,6 +22,8 @@ public class Calc {
         result = switch (operation){
             case "Add": yield add(FirstNumber, SecondNumber);
 
+            case "Sub": yield sub(FirstNumber, SecondNumber);
+
             default:{
                 System.out.println("Invalid Operation");
                 VaildOperation = false;
@@ -39,5 +41,10 @@ public class Calc {
     public static double add(double a, double b){
         return a + b;
     }
+
+    public static double sub(double a, double b){
+        return a - b;
+    }
+
 
 }
