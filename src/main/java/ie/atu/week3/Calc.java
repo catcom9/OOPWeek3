@@ -24,6 +24,8 @@ public class Calc {
 
             case "Sub": yield sub(FirstNumber, SecondNumber);
 
+            case "Mul": yield mul(FirstNumber, SecondNumber);
+
             default:{
                 System.out.println("Invalid Operation");
                 VaildOperation = false;
@@ -46,5 +48,8 @@ public class Calc {
         return a - b;
     }
 
+    public static double mul(double a, double b){
+        return a * b;
+    }
 
 }
