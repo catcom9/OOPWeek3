@@ -26,8 +26,15 @@ public class Calc {
 
             case "Mul": yield mul(FirstNumber, SecondNumber);
 
+            case "Div":{
+                if (SecondNumber == 0){
+                    VaildOperation = false;
+                    yield 0;
+                }
+                yield div(FirstNumber, SecondNumber);
+            }
+
             default:{
-                System.out.println("Invalid Operation");
                 VaildOperation = false;
                 yield 0;
             }
@@ -35,6 +42,8 @@ public class Calc {
 
         if (VaildOperation){
             System.out.println("The result is: " + result);
+        } else {
+            System.out.println("Invalid Operation");
         }
 
 
@@ -52,4 +61,7 @@ public class Calc {
         return a * b;
     }
 
+    public static double div(double a, double b){
+        return a / b;
+    }
 }
