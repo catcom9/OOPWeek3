@@ -16,7 +16,7 @@ public class Calc {
         System.out.println("Enter the second number: ");
         SecondNumber = Input.nextDouble();
 
-        System.out.println("Please enter an operation: (Add, Sub, Mul, Dev)");
+        System.out.println("Please enter an operation: (Add, Sub, Mul, Dev, Pow)");
         operation = Input.next();
 
         result = switch (operation){
@@ -33,6 +33,8 @@ public class Calc {
                 }
                 yield div(FirstNumber, SecondNumber);
             }
+
+            case "Pow": yield pow(SecondNumber, FirstNumber);
 
             default:{
                 VaildOperation = false;
@@ -63,5 +65,9 @@ public class Calc {
 
     public static double div(double a, double b){
         return a / b;
+    }
+
+    public static double pow(double a, double b) {
+        return Math.pow(a, b);
     }
 }
